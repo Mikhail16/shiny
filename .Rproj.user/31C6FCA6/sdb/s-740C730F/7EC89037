@@ -1,0 +1,17 @@
+{
+    "contents" : "fun <- function(){\n        U <- readline(\"Введіть через кому інформаційну послідовність U довжиною 4?\")\n        P <- readline(\"Введіть через кому біти формуючого поліному P?\")\n       \n        U <- as.numeric(unlist(strsplit(U,\",\")))\n        P <- as.numeric(unlist(strsplit(P,\",\")))\n        \n        \n        size<-length(P)-1\n        R_start<-rep(0, size)\n        I<-c(U,R_start)\n        I1<-I\n        temp<-I[match(1,I):(match(1,I)+size)]\n        n<-0\n        repeat{\n                \n                test<-as.numeric(xor(temp,P))\n                \n                if((match(1,I1)+size+1)>length(I1)){R<-test[2:length(test)]; break;}\n                \n                if(match(1,I1)==1){ I1<-c(test,I1[(match(1,I1)+size+1):length(I1)])}else{\n                        I1<-c(I1[1:(match(1,I1)-1)],test,I1[(match(1,I1)+size+1):length(I1)])\n                }\n                if (is.na(match(1,I1))){R<-rep(0,size); break;}\n                if(match(1,I1)>(length(I1)-size)){R<-I1[(length(I1)-size+1):length(I1)]; break;}\n                \n                temp<-I1[match(1,I1):(match(1,I1)+size)]\n                n<-n+1\n        }\n        \n        Rezult<-c(U,R)\n        print(Rezult)\n        print(n)\n        \n        return(list(Rezult, P))\n        \n}\n\n\nfun()\n#U<-c(1,1,0,1)\n#P<-c(1,0,1,1)\n\n\n\n\n\n\n\n\n\n\n\n\n",
+    "created" : 1456500886907.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1789001330",
+    "id" : "7EC89037",
+    "lastKnownWriteTime" : 1456500097,
+    "path" : "~/Shiny/Lab/_sircl_code_lab5.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

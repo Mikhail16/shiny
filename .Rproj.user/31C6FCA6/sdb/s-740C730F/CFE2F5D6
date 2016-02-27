@@ -1,0 +1,17 @@
+{
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nshinyUI(fluidPage(\n\n  # Application title\n  titlePanel(\"EPIC\"),\n\n  # Sidebar with a slider input for number of bins\n  sidebarLayout(\n    sidebarPanel(\n      textInput(\"text1\", label = h3(\"Input U\")),\n      textInput(\"text2\", label = h3(\"Input P\")),\n      submitButton(\"Submit\")\n    ),\n\n    # Show a plot of the generated distribution\n    mainPanel(\n      fluidRow(column(6, \n        verbatimTextOutput(\"text1\"),\n        verbatimTextOutput(\"text2\"),\n        verbatimTextOutput(\"rezult\")\n      ))\n    )\n  )\n))\n",
+    "created" : 1456497837452.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "921553099",
+    "id" : "CFE2F5D6",
+    "lastKnownWriteTime" : 1456597650,
+    "path" : "~/Shiny/lab2/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

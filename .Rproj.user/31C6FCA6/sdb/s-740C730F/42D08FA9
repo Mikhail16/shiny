@@ -1,0 +1,18 @@
+{
+    "contents" : "U <- as.numeric(unlist(strsplit(U,\",\")))\nP <- as.numeric(unlist(strsplit(P,\",\")))\n\nsize <- length(P) - 1\nR_start<-rep(0, size)\nI <- c(U, R_start)\nI1 <- I\ntmp<-I[match(1,I):(match(1,I)+size)]\nn<-0\n\nrepeat {\n  \n  tmp1<-as.numeric(xor(tmp,P))\n  \n  if((match(1,I1)+size+1)>length(I1)){\n    R<-tmp1[2:length(tmp1)]; break;\n  }\n  \n  if(match(1,I1)==1){ \n    I1<-c(tmp1,I1[(match(1,I1)+size+1):length(I1)])\n  }else{\n    I1<-c(I1[1:(match(1,I1)-1)],tmp1,I1[(match(1,I1)+size+1):length(I1)])\n  }\n  if (is.na(match(1,I1))){\n    R<-rep(0,size); break;\n  }\n  if(match(1,I1)>(length(I1)-size)){\n    R<-I1[(length(I1)-size+1):length(I1)]; break;\n  }\n  \n  tmp<-I1[match(1,I1):(match(1,I1)+size)]\n  n<-n+1\n}",
+    "created" : 1456595306029.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "559913004",
+    "id" : "42D08FA9",
+    "lastKnownWriteTime" : 1456595318,
+    "path" : "~/Shiny/lab2/test.R",
+    "project_path" : "test.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
